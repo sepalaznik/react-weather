@@ -1,22 +1,19 @@
 import React from "react";
 
-import './ThisDay.css';
+import './NextDays.css';
 import { WeatherSvgSelector } from '../WeatherSvgSelector';
 
-export function ThisDay() {
+export function Card(day) {
     return (
-        <div className="this__day">
-            <div className="top__block">    
-                <div className="current__temperature">20&#176;</div>
-                <div className="weather__logo">
-                    <WeatherSvgSelector id="cloudy" />
-                </div>
+        <div className="weather__card">
+            <div className="day__title">{day.week_day}</div>
+            <div className="day__date">{day.day_date}</div>
+            <div className="day__weather_logo">
+                <WeatherSvgSelector id={day.icon_id} />
             </div>
-            <div className="bottom__block">
-                <div className="this__day_title">Сегодня: <span>17.11</span></div>
-                <div className="current__time">Время: <span>12:05</span></div>
-                <div className="current__city">Город: <span>Минск</span></div>
-            </div>
+            <div className="day__temperature">Днём: <span>{day.temp_day}&#176;</span></div>
+            <div className="night__temperature">Ночью: <span>{day.temp_night}&#176;</span></div>
+            <div className="cloudy">{day.info}</div>
         </div>
     )
 };

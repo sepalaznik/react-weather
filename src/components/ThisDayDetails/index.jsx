@@ -42,8 +42,9 @@ export function ThisDayDetails() {
                         </div>
                         <div className="indicator__name">{item.name}:</div>
                         <div className="indicator__value">{item.value}</div>
-                  </div>))}
-                </div>
+                    </div>
+                ))}
+            </div>
             <img src="assets/images/clouds.png" alt="clouds" />
         </div>
     )

@@ -35,7 +35,7 @@ export function Header() {
             <div className="wrapper">
                 <Link to="/about">
                     <div className="logo">
-                        <img src="assets/images/raindrop.svg" alt="About Us" />
+                        <img src="assets/images/icon_raindrop.svg" alt="About Us" />
                     </div>
                 </Link>
                 <Select options={options} styles={selectStyles} placeholder="Выберите город" />

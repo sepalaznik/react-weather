@@ -59,13 +59,13 @@ export function WeatherSvgSelector(props) {
                             <stop stopColor="#FFB301"/>
                             <stop offset="1" stopColor="#FFC533"/>
                         </linearGradient>
-                        <linearGradient    radient id="paint1_linear_2_531" x1="18" y1="12" x2="18" y2="34" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint1_linear_2_531" x1="18" y1="12" x2="18" y2="34" gradientUnits="userSpaceOnUse">
                             <stop stopColor="#9FC7FF"/>
                             <stop offset="1" stopColor="#9BC1F5"/>
                         </linearGradient>
                         <radialGradient id="paint2_radial_2_531" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.0679 -22.6966) rotate(-90) scale(20.9574 6.69705)">
-                            <stop stopColor="#486DA8" stop-opacity="0.4"/>
-                            <stop offset="1" stopColor="#486DA8" stop-opacity="0"/>
+                            <stop stopColor="#486DA8" stopOpacity="0.4"/>
+                            <stop offset="1" stopColor="#486DA8" stopOpacity="0"/>
                         </radialGradient>
                     </defs>
                 </svg>
@@ -124,7 +124,7 @@ export function WeatherSvgSelector(props) {
                             <stop stopColor="#FFB301"/>
                             <stop offset="1" stopColor="#FFC533"/>
                         </linearGradient>
-                        <linearGradient    radient id="paint1_linear_2_531" x1="18" y1="12" x2="18" y2="34" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint1_linear_2_531" x1="18" y1="12" x2="18" y2="34" gradientUnits="userSpaceOnUse">
                             <stop stopColor="#D1E3FC"/>
                             <stop offset="1" stopColor="#AFCCF5"/>
                         </linearGradient>

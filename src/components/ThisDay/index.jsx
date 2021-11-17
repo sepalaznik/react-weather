@@ -13,7 +13,7 @@ export function ThisDay() {
                 </div>
             </div>
             <div className="bottom__block">
-                <div className="this__day_title">Сегодня: <span>17.11</span></div>
+                <div className="this__day_title">Сегодня: <span>18 ноя</span></div>
                 <div className="current__time">Время: <span>12:05</span></div>
                 <div className="current__city">Город: <span>Минск</span></div>
             </div>

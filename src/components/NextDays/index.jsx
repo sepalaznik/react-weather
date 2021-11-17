@@ -1,21 +1,76 @@
 import React from "react";
 
-import './ThisDay.css';
-import { WeatherSvgSelector } from '../WeatherSvgSelector';
+import './NextDays.css';
+import { Tabs } from './Tabs';
+import { Card } from './Card';
 
-export function ThisDay() {
+export function NextDays() {
+    const days = [
+        {
+            week_day: 'Сегодня',
+            day_date: '18 ноя',
+            icon_id: 'sun',
+            temp_day: '+25',
+            temp_night: '+20',
+            info: 'Ясно',
+        },
+        {
+            week_day: 'Завтра',
+            day_date: '19 ноя',
+            icon_id: 'small_rain',
+            temp_day: '+24',
+            temp_night: '+21',
+            info: 'Небольшой дождь и солнце',
+        },
+        {
+            week_day: 'Суббота',
+            day_date: '20 ноя',
+            icon_id: 'cloudy_sun',
+            temp_day: '+20',
+            temp_night: '+15',
+            info: 'Облачно с прояснениями',
+        },
+        {
+            week_day: 'Воскресение',
+            day_date: '21 ноя',
+            icon_id: 'cloudy',
+            temp_day: '+18',
+            temp_night: '+15',
+            info: 'Облачно',
+        },
+        {
+            week_day: 'Понедельник',
+            day_date: '22 ноя',
+            icon_id: 'rain',
+            temp_day: '+15',
+            temp_night: '+11',
+            info: 'Дождь',
+        },
+        {
+            week_day: 'Вторник',
+            day_date: '22 ноя',
+            icon_id: 'sun',
+            temp_day: '+17',
+            temp_night: '+12',
+            info: 'Ясно',
+        },
+        {
+            week_day: 'Среда',
+            day_date: '23 ноя',
+            icon_id: 'cloudy',
+            temp_day: '+18',
+            temp_night: '+12',
+            info: 'Облачно',
+        },
+    ];
+
     return (
-        <div className="this__day">
-            <div className="top__block">    
-                <div className="current__temperature">20&#176;</div>
-                <div className="weather__logo">
-                    <WeatherSvgSelector id="cloudy" />
-                </div>
-            </div>
-            <div className="bottom__block">
-                <div className="this__day_title">Сегодня: <span>17.11</span></div>
-                <div className="current__time">Время: <span>12:05</span></div>
-                <div className="current__city">Город: <span>Минск</span></div>
+        <div className="forecast__duration">
+            <Tabs />
+            <div className="next__days">    
+                {days.map((day) => (
+                    <Card {...day} key={day.week_day + day.day_date} />
+                ))}
             </div>
         </div>
     )

@@ -1,42 +1,56 @@
-.this__day {
+.next__days {
     padding: 16px;
-    width: 296px;
-    border-radius: 12px;
+    border-radius: 0 0 12px 12px;
     background: #ffffff;
     box-shadow: 2px 4px 16px -2px rgba(179, 179, 179, 0.3);
-}
-.top__block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-bottom: 16px;
+    gap: 16px;
+    overflow: auto;
 }
-.current__temperature {
-    font-size: 96px;
-    font-weight: 700;
-    color: #4793ff
+.weather__card {
+    font-size: 12px;
+    color: #939CB0;
+    background: rgba(71, 147, 255, 0.2);
+    width: 137px;
+    height: 200px;
+    padding: 12px 8px;
+    border-radius: 8px;
+    cursor: pointer;
 }
-.weather__logo svg {
-    width: 96px;
-    height: 96px;
+.day__weather_logo svg {
+    width: 52px;
+    height: 52px;
 }
-.bottom__block {
-    font-size: 24px;
-    font-weight: 500;
+.day__title, .day__weather_logo, .day__temperature, .night__temperature {
+    margin-bottom: 8px;
 }
-.this__day_title {
-    margin-bottom: 16px;
+.day__date {
+    margin-bottom: 12px;
 }
-.current__time, .current__city {
-    color: #939cb0;
+.day__title, .day__temperature span {
+    font-size: 18px;
+    color: #000;
 }
-.current__time {
-    margin-bottom: 5px;
+.tabs__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
-
-@media (max-width:360px) {
-    .current__temperature {
-        font-size: 60px;
-    }
+.tabs__block, .select__tabs {
+    display: flex;
+    gap: 8px;
+}
+.tab, .close {
+    padding: 8px 12px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 2px 4px 16px -2px rgba(179, 179, 179, 0.3);
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #4793ff;
+    color: #ffffff;
 }

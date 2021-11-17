@@ -1,6 +1,6 @@
 .this__day_details {
     padding: 16px;
-    max-width: 496px;
+    max-width: 786px;
     width: 100%;
     border-radius: 12px;
     background: #ffffff;
@@ -45,11 +45,11 @@
     color: #939cb0;
     margin-right: 16px;
 }
-@media (max-width:360px) {
+@media (max-width:390px) {
     .indicator__name {
         display: none;
     }
     .this__day_details img {
-        width: 324px;
+        width: 296px;
     }
 }

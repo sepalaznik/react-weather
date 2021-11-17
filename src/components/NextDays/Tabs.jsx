@@ -1,22 +1,30 @@
 import React from "react";
 
-import './ThisDay.css';
-import { WeatherSvgSelector } from '../WeatherSvgSelector';
+import './NextDays.css';
 
-export function ThisDay() {
+export function Tabs() {
+    const tabsControl = [
+        {
+            value: "На неделю",
+        },
+        {
+            value: "На 2 недели",
+        },
+        {
+            value: "На месяц",
+        },
+    ]
+
     return (
-        <div className="this__day">
-            <div className="top__block">    
-                <div className="current__temperature">20&#176;</div>
-                <div className="weather__logo">
-                    <WeatherSvgSelector id="cloudy" />
-                </div>
+        <div className="tabs__block">
+            <div className="select__tabs">
+                {tabsControl.map(item => (
+                    <div className="tab active" key={item.value}>
+                        {item.value}
+                    </div>
+                ))}
             </div>
-            <div className="bottom__block">
-                <div className="this__day_title">Сегодня: <span>17.11</span></div>
-                <div className="current__time">Время: <span>12:05</span></div>
-                <div className="current__city">Город: <span>Минск</span></div>
-            </div>
+            <div className="close">Отменить</div>
         </div>
     )
 };
