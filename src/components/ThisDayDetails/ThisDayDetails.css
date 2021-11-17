@@ -6,18 +6,6 @@
     background: var(--components-background-default);;
     box-shadow: var(--components-shadow-default);
     font-size: 14px;
-    position: relative;
-}
-.this__day_details img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-}
-.this__day_items {
-    position: relative;
-    z-index: 2;
 }
 .day__details_item {
     display: flex;

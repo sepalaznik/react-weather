@@ -8,8 +8,10 @@ Sergei Palaznik, 2021
 - webpack settings
 - ReactJS
 - React Router
+- Hooks
+- css variables
 
-## Available Scripts
+## Available Scripts:
 
 ### npm run dev
 Runs the app in the development mode on the port "http://localhost:3000".

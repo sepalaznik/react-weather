@@ -45,7 +45,6 @@ export function ThisDayDetails() {
                     </div>
                 ))}
             </div>
-            <img src="assets/images/clouds.png" alt="clouds" />
         </div>
     )
 };

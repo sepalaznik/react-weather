@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Select from 'react-select';
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,28 @@ export function Header() {
         }),
     };
 
+    const [theme, setTheme] = useState('light');
+
+    function changeTheme() {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
+
+    useEffect(() => {
+        const root = document.querySelector(':root');
+
+        const changedStyles = [
+            'body-background',
+            'components-background',
+            'card-background',
+            'text-color',
+            'components-shadow',
+        ];
+
+        changedStyles.forEach(style => {
+            root.style.setProperty(`--${style}-default`, `var(--${style}-${theme})`);
+        });
+    }, [theme]);  
+
     return (
         <div className="header">
             <div className="wrapper">
@@ -40,10 +62,13 @@ export function Header() {
             </div>
             <div className="wrapper">
                 <Link to="/about">
-                    <div className="logo">
-                        <img src="assets/images/icon_raindrop.svg" alt="About Us" />
+                    <div className="icon about_me">
+                        <img src="assets/images/icon_snowflake.svg" alt="About Me" />
                     </div>
                 </Link>
+                <div className="icon" onClick={changeTheme}>
+                    <img src="assets/images/icon_raindrop.svg" alt="Change Theme" />
+                </div>
                 <Select options={options} styles={selectStyles} placeholder="Выберите город" />
             </div>
         </div>

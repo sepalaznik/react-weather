@@ -11,12 +11,16 @@
     align-items: center;
     margin-bottom: 16px;
 }
-.logo {
+.logo, .icon {
     margin-right: 16px;
 }
 .logo svg {
     width: 52px;
     height: 52px;
+}
+.about_me svg {
+    width: 12px;
+    height: 12px;
 }
 .title {
     text-transform: uppercase;
