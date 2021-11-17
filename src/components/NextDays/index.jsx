@@ -69,7 +69,7 @@ export function NextDays() {
             <Tabs />
             <div className="next__days">    
                 {days.map((day) => (
-                    <Card {...day} key={day.week_day + day.day_date} />
+                        <Card {...day} key={day.week_day + day.day_date} />
                 ))}
             </div>
         </div>

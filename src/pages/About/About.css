@@ -6,10 +6,10 @@
     text-transform: uppercase;
     font-size: 28px;
     font-weight: 600;
-    color:#4793ff;
+    color: var(--primary-color);
 }
 .about-us article {
     font-size: 24px;
     font-weight: 400;
-    color: #939cb0;
+    color: var(--base-color);
 }

@@ -4,6 +4,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+    color: #000000;
 }
 .wrapper {
     display: flex;
@@ -21,7 +22,7 @@
     text-transform: uppercase;
     font-size: 28px;
     font-weight: 600;
-    color:#3f368d;
+    color: var(--primary-color);
     text-decoration: none;
 }
 

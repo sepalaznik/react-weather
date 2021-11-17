@@ -14,9 +14,9 @@ function App() {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" exact component={About} />
             </Switch>
-            <Popup />
         </div>
     );
 }
+// <Popup />
 
 export default App;

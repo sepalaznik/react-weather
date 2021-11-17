@@ -9,7 +9,7 @@ export const About = () => {
             <article>Тестовое задание<br/> 
             Автор: Сергей Палазник, 2021<br/>
             <br/>
-            Использованы: React, React-Router и пр.
+            Использованы: React, React-Router, css variables и пр.
             <br/>
             </article> 
         </div>

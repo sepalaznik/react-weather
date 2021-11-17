@@ -14,11 +14,17 @@ export function Header() {
     const selectStyles = {
         control: (styles) => ({
             ...styles,
-            backgroundColor: 'rgba(71, 147, 255, 0.2)',
+            backgroundColor: '#cfe1fc',
             width: '208px',
             padding: '8px 2px',
             border: 'none',
-            borderRadius: '12px'
+            borderRadius: '12px',
+            cursor: 'pointer',
+            zIndex: '100',
+        }),
+        singleValue: (styles) => ({
+            ...styles,
+            color: '#000',
         }),
     };
 

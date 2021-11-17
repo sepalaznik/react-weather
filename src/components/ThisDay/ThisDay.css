@@ -1,9 +1,9 @@
 .this__day {
     padding: 16px;
     width: 328px;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 2px 4px 16px -2px rgba(179, 179, 179, 0.3);
+    border-radius: var(--standart-border-radius);
+    background: var(--components-background-default);
+    box-shadow: var(--components-shadow-default);
 }
 .top__block {
     display: flex;
@@ -15,7 +15,7 @@
 .current__temperature {
     font-size: 96px;
     font-weight: 700;
-    color: #4793ff;
+    color: var(--primary-color);
 }
 .weather__logo svg {
     width: 96px;
@@ -29,7 +29,7 @@
     margin-bottom: 16px;
 }
 .current__time, .current__city {
-    color: #939cb0;
+    color: var(--base-color);
 }
 .current__time {
     margin-bottom: 5px;
