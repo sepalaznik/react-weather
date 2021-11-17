@@ -1,0 +1,42 @@
+.this__day {
+    padding: 16px;
+    width: 296px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 2px 4px 16px -2px rgba(179, 179, 179, 0.3);
+}
+.top__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.current__temperature {
+    font-size: 96px;
+    font-weight: 700;
+    color: #4793ff
+}
+.weather__logo svg {
+    width: 96px;
+    height: 96px;
+}
+.bottom__block {
+    font-size: 24px;
+    font-weight: 500;
+}
+.this__day_title {
+    margin-bottom: 16px;
+}
+.current__time, .current__city {
+    color: #939cb0;
+}
+.current__time {
+    margin-bottom: 5px;
+}
+
+@media (max-width:360px) {
+    .current__temperature {
+        font-size: 60px;
+    }
+}

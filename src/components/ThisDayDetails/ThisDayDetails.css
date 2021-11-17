@@ -1,0 +1,55 @@
+.this__day_details {
+    padding: 16px;
+    max-width: 496px;
+    width: 100%;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 2px 4px 16px -2px rgba(179, 179, 179, 0.3);
+    font-size: 14px;
+    position: relative;
+}
+.this__day_details img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.this__day_items {
+    position: relative;
+    z-index: 2;
+}
+.day__details_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+.day__details_item:last-of-type {
+    margin-bottom: 0;
+}
+.day__details_indicator {
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow:  2px 4px 8px -2px rgba(179, 179, 179, 0.3);
+}
+.day__details_indicator svg {
+    width: 20px;
+    height: 20px;
+}
+.indicator__name {
+    color: #939cb0;
+    margin-right: 16px;
+}
+@media (max-width:360px) {
+    .indicator__name {
+        display: none;
+    }
+    .this__day_details img {
+        width: 324px;
+    }
+}

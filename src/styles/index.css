@@ -1,0 +1,17 @@
+@import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: #c4e0fa;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 920px;
+    margin: 24px auto;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-family: 'Montserrat', Verdana, Tahoma, sans-serif;
+}
