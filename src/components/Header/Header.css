@@ -4,7 +4,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    color: #000000;
 }
 .wrapper {
     display: flex;

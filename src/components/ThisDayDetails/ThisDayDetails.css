@@ -1,7 +1,7 @@
 .this__day_details {
     padding: 16px;
-    max-width: 786px;
-    width: 100%;
+    width: calc(66.6% - 40px);
+    min-width: 328px;
     border-radius: var(--standart-border-radius);
     background: var(--components-background-default);;
     box-shadow: var(--components-shadow-default);
@@ -34,11 +34,18 @@
     color: var(--base-color);
     margin-right: 16px;
 }
-@media (max-width:390px) {
+@media (max-width:880px) {
     .indicator__name {
         display: none;
     }
-    .this__day_details img {
-        width: 296px;
+}
+@media (max-width:768px) {
+    .indicator__name {
+        display: inline-block;
+    }
+}
+@media (max-width:390px) {
+    .indicator__name {
+        display: none;
     }
 }

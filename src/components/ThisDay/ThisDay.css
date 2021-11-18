@@ -1,6 +1,7 @@
 .this__day {
     padding: 16px;
-    width: 328px;
+    width: calc(33% - 40px);
+    min-width: 328px;
     border-radius: var(--standart-border-radius);
     background: var(--components-background-default);
     box-shadow: var(--components-shadow-default);

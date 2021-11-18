@@ -12,7 +12,4 @@ body {
     max-width: 1200px;
     margin: 24px auto;
     padding: 16px;
-    border: none;
-    border-radius: var(--standart-border-radius);
-    background: var(--body-background-default);
 }

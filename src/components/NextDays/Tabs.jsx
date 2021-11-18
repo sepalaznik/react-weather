@@ -24,7 +24,10 @@ export function Tabs() {
                     </div>
                 ))}
             </div>
-            <div className="close">Отменить</div>
+            <div className="close">
+                <span>Отменить</span>
+                <img src="assets/images/icon_close.svg" alt="Close" />
+            </div>
         </div>
     )
 };

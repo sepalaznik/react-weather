@@ -8,8 +8,10 @@ import { NextDays } from '../../components/NextDays';
 export function Home() {
     return (
         <div className="home-page">
-            <ThisDay />
-            <ThisDayDetails />
+            <div className="this-day-forecast">
+                <ThisDay />
+                <ThisDayDetails />
+            </div>
             <NextDays />
         </div>
     )
