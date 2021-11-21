@@ -7,6 +7,7 @@ import { About } from './pages/About';
 import { Popup } from './components/Popup';
 
 function App() {
+
     return (
         <div className="container">
             <Header />

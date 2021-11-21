@@ -2,6 +2,8 @@ import React from "react";
 
 import './ThisDay.css';
 import { WeatherSvgSelector } from '../WeatherSvgSelector';
+import { Clock } from "../../model/clock";
+import { DatesList } from "../../model/dates-list";
 
 export function ThisDay() {
     return (
@@ -13,8 +15,8 @@ export function ThisDay() {
                 </div>
             </div>
             <div className="bottom__block">
-                <div className="this__day_title">Сегодня: <span>18 ноя</span></div>
-                <div className="current__time">Время: <span>12:05</span></div>
+                <div className="this__day_title">Сегодня: <span><DatesList/></span></div>
+                <div className="current__time">Время: <span><Clock/></span></div>
                 <div className="current__city">Город: <span>Минск</span></div>
             </div>
         </div>

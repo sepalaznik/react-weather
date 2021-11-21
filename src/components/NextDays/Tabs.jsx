@@ -5,13 +5,13 @@ import './NextDays.css';
 export function Tabs() {
     const tabsControl = [
         {
+            value: "На 3 дня",
+        },
+        {
             value: "На неделю",
         },
         {
             value: "На 2 недели",
-        },
-        {
-            value: "На месяц",
         },
     ]
 

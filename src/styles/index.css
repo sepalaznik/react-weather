@@ -9,7 +9,7 @@ body {
 .container {
     font-family: 'Montserrat', Verdana, Tahoma, sans-serif;
     color: var(--text-color-default);
-    max-width: 1200px;
+    max-width: 900px;
     margin: 24px auto;
     padding: 16px;
 }

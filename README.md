@@ -8,7 +8,6 @@ Sergei Palaznik, 2021
 - webpack settings
 - ReactJS
 - React Router
-- Hooks
 - css variables
 
 ## Available Scripts:
