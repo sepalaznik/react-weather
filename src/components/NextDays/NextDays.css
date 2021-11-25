@@ -67,6 +67,9 @@
     }
 }
 @media (max-width:540px) {
+    .day__title, .day__temperature span, .tab {
+        font-size: 13px;
+    }
     .close img {
         display: block;
     }

@@ -3,14 +3,14 @@ import React from "react";
 import './NextDays.css';
 import { Tabs } from './Tabs';
 import { Card } from './Card';
-import { DatesList, DaysList } from "../../model/dates-list";
+import { DatesList, DaysList } from "../../model/datesList";
 
 export function NextDays() {
     const days = [
         {
             week_day: <DaysList/>,
             day_date: <DatesList/>,
-            icon_id: 'sun',
+            icon_id: '13d',
             temp_day: '+25',
             temp_night: '+20',
             info: 'Ясно',
@@ -18,7 +18,7 @@ export function NextDays() {
         {
             week_day: 'Завтра',
             day_date: '19 ноя',
-            icon_id: 'cloudy_sun',
+            icon_id: '11d',
             temp_day: '+24',
             temp_night: '+18',
             info: 'Облачно с прояснениями',
@@ -26,7 +26,7 @@ export function NextDays() {
         {
             week_day: 'Суббота',
             day_date: '20 ноя',
-            icon_id: 'small_rain',
+            icon_id: '10n',
             temp_day: '+17',
             temp_night: '+12',
             info: 'Небольшой дождь и солнце',
@@ -34,7 +34,7 @@ export function NextDays() {
         {
             week_day: 'Воскресение',
             day_date: '21 ноя',
-            icon_id: 'cloudy',
+            icon_id: '02n',
             temp_day: '+10',
             temp_night: '+7',
             info: 'Облачно',

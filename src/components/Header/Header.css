@@ -5,28 +5,31 @@
     flex-wrap: wrap;
     width: 100%;
 }
+a {
+    text-decoration: none;
+}
 .wrapper {
     display: flex;
     align-items: center;
+    column-gap: 16px;
     margin-bottom: 16px;
-}
-.logo, .icon {
-    margin-right: 16px;
 }
 .logo svg {
     width: 52px;
     height: 52px;
 }
-.about_me svg {
+.about-me svg {
     width: 12px;
     height: 12px;
+}
+.change-theme {
+    cursor: pointer;
 }
 .title {
     text-transform: uppercase;
     font-size: 28px;
     font-weight: 600;
     color: var(--primary-color);
-    text-decoration: none;
 }
 
 @media (max-width:360px) {

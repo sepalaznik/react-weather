@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import './Header.css';
 
-export function Header() {
+export function Header({}) {
     const [theme, setTheme] = useState('light');
         
     function changeTheme() {
@@ -27,7 +27,6 @@ export function Header() {
             root.style.setProperty(`--${style}-default`, `var(--${style}-${theme})`);
         });
     }, [theme]); 
-
 
     const options = [
         { value: 'minsk', label: 'Минск' },
@@ -59,25 +58,25 @@ export function Header() {
 
     return (
         <div className="header">
-            <div className="wrapper">
-                <Link to="/">
+            <Link to="/">
+                <div className="wrapper">
                     <div className="logo">
                         <img src="assets/images/logo_weather_2.svg" alt="App Logo" title ="На главную страницу" />
                     </div>
-                </Link>
                     <div className="title">React Weather</div>
-            </div>
+                </div>
+            </Link>
             <div className="wrapper">
                 <Link to="/about">
-                    <div className="icon about_me">
+                    <div className="icon about-me">
                         <img src="assets/images/icon_snowflake.svg" alt="About Me" title ="О приложении" />
                     </div>
                 </Link>
-                <div className="icon" onClick={changeTheme}>
+                <div className="icon change-theme" onClick={changeTheme}>
                     <img src="assets/images/icon_raindrop.svg" alt="Change Theme" title ="Изменить тему" />
                 </div>
                 <Select 
-                    options={options} 
+                    options={options}
                     styles={selectStyles} 
                     defaultValue={options[0]} 
                     placeholder="Выберите город" 
