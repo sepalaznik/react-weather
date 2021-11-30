@@ -3,13 +3,23 @@ import Select from 'react-select';
 import { Link } from "react-router-dom";
 
 import './Header.css';
+import AppContext from "../../context";
 
 export function Header({}) {
-    const [theme, setTheme] = useState('light');
-        
+    const { setCurrentCity } = React.useContext(AppContext);
+    const [theme, setTheme] = useState(() => setStartTheme());
+
+    function setStartTheme() {
+        const startTheme = localStorage.getItem('theme');
+        if (startTheme) {
+            return JSON.parse(startTheme);
+        } else {
+            return 'light';
+        }
+    };
+
     function changeTheme() {
         setTheme(theme === 'light' ? 'dark' : 'light');
-        localStorage.setItem(theme, JSON.stringify(theme));
     };
 
     useEffect(() => {
@@ -26,12 +36,17 @@ export function Header({}) {
         changedStyles.forEach(style => {
             root.style.setProperty(`--${style}-default`, `var(--${style}-${theme})`);
         });
+
+        localStorage.setItem('theme', JSON.stringify(theme));
+        
     }, [theme]); 
 
     const options = [
-        { value: 'minsk', label: 'Минск' },
-        { value: 'moscow', label: 'Москва' },
-        { value: 'bratislava', label: 'Братислава' },
+        { value: 'Minsk,BY', label: 'Минск' },
+        { value: 'Moscow,RU', label: 'Москва' },
+        { value: 'Bratislava,SK', label: 'Братислава' },
+        { value: 'Jerusalem,IL', label: 'Иерусалим' },
+        { value: 'New York,NY,US', label: 'Нью-Йорк' },
     ];
     
     const selectStyles = {
@@ -56,6 +71,10 @@ export function Header({}) {
         }),
     };
 
+    const handleSelectCity = (selectedOption) => {
+        setCurrentCity(selectedOption.label);
+    }
+
     return (
         <div className="header">
             <Link to="/">
@@ -76,6 +95,7 @@ export function Header({}) {
                     <img src="assets/images/icon_raindrop.svg" alt="Change Theme" title ="Изменить тему" />
                 </div>
                 <Select 
+                    onChange={handleSelectCity}
                     options={options}
                     styles={selectStyles} 
                     defaultValue={options[0]} 

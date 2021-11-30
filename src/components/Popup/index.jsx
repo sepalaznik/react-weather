@@ -1,8 +1,8 @@
 import React from "react";
 
 import './Popup.css';
-import { IndicatorSvgSelector } from '../IndicatorSvgSelector';
-import { WeatherSvgSelector } from '../WeatherSvgSelector';
+import { IndicatorSvgSelector } from '../ImgSelectors/IndicatorSvgSelector';
+import { WeatherSvgSelector } from '../ImgSelectors/WeatherSvgSelector';
 
 export function Popup() {
     const selectDay = [

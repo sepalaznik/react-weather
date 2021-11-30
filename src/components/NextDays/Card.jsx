@@ -1,7 +1,7 @@
 import React from "react";
 
 import './NextDays.css';
-import { WeatherSvgSelector } from '../WeatherSvgSelector';
+import { WeatherSvgSelector } from '../ImgSelectors/WeatherSvgSelector';
 
 export function Card(day) {
     return (

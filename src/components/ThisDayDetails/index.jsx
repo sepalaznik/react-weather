@@ -1,37 +1,37 @@
 import React from "react";
 
 import './ThisDayDetails.css';
-import { IndicatorSvgSelector } from '../IndicatorSvgSelector';
+import { IndicatorSvgSelector } from '../ImgSelectors/IndicatorSvgSelector';
 import AppContext from "../../context";
 
 export function ThisDayDetails() {
     const { forecastData } = React.useContext(AppContext);
 
-    const cloudyDescription = (props) => {
-        switch (props.cloudy) {
-            case 'clear sky':
-                return "Ясно";
-            case 'few clouds':
-                return "Небольшая обласность с прояснениями";
-            case 'scattered clouds':
-                return "Облачно";
-            case 'broken clouds':
-            case 'overcast clouds':
-                return "Сплошная облачность";
-            case 'shower rain':
-                return "Сильный дождь";
-            case 'rain':
-                return "Небольшой дождь";
-            case 'thunderstorm':
-                return "Гроза";
-            case 'snow':
-                return "Снег";
-            case 'mist':
-                return "Туман";
-            default:
-                return null;
+    let windDirectionRu = "";
+    if (forecastData.wind_direction >= 22.5 && forecastData.wind_direction < 67.5) {
+        windDirectionRu = "северо-восточный";
+    }
+    if (forecastData.wind_direction >= 67.5 && forecastData.wind_direction < 112.5) {
+        windDirectionRu = "восточный";
+    }
+    if (forecastData.wind_direction >= 112.5 && forecastData.wind_direction < 157.5) {
+        windDirectionRu = "юго-восточный";
         }
-    };
+    if (forecastData.wind_direction >= 157.5 && forecastData.wind_direction < 202.5) {
+        windDirectionRu = "южный";
+    }
+    if (forecastData.wind_direction >= 202.5 && forecastData.wind_direction < 247.5) {
+        windDirectionRu = "юго-западный";
+    }
+    if (forecastData.wind_direction >= 247.5 && forecastData.wind_direction < 292.5) {
+        windDirectionRu = "западный";
+    }
+    if (forecastData.wind_direction >= 292.5 && forecastData.wind_direction < 337.5) {
+        windDirectionRu = "северо-западный";
+        }
+    if (forecastData.wind_direction < 22.5 && forecastData.wind_direction >= 337.5) {
+        windDirectionRu = "северный";
+    }
 
     const items = [
         {
@@ -47,7 +47,7 @@ export function ThisDayDetails() {
         {
             id: 'cloudy',
             name: 'Погода',
-            value: cloudyDescription(forecastData),
+            value: `${forecastData.condition}`
         },
         {
             id: 'precipitation',
@@ -57,14 +57,14 @@ export function ThisDayDetails() {
         {
             id: 'wind',
             name: 'Ветер',
-            value: `${forecastData.wind_speed} м/с, направление: ${forecastData.wind_direction}°`,
+            value: `${windDirectionRu}, ${forecastData.wind_speed} м/с`,
         },
     ];
 
     return (
         <div className="this__day_details">
             <div className="this__day_items">
-                {forecastData && items.map((item) => (
+                {items.map((item) => (
                     <div className="day__details_item" key={item.id}>
                         <div className="day__details_indicator">
                             <IndicatorSvgSelector id={item.id} />
