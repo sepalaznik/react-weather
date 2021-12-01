@@ -12,41 +12,42 @@ function App() {
     const [forecastData, setForecastData] = React.useState({});
     const [isLoading, setIsLoading] = React.useState(true);
     const [currentCity, setCurrentCity] = React.useState("Минск");
+    const [cityCoordinates, setCityCoordinates] = React.useState("lat=53.9&lon=27.5667");
 
     React.useEffect(() => {
-        async function getOpenWeatherData(city) {
-            const URL = "https://api.openweathermap.org/data/2.5/weather";
-            const URL5 = "https://api.openweathermap.org/data/2.5/forecast";
+        async function getOpenWeatherData(coordinates) {
+            const URL = "https://api.openweathermap.org/data/2.5/onecall";
             const API_KEY = "317d8d98230306f1440ac5140bd1461a";
 
             try {
-                //await axios.get(`${URL5}?q=${city}&appid=${API_KEY}&units=metric&lang=ru`)
-                await axios.get(`${URL}?q=${city}&appid=${API_KEY}&units=metric&lang=ru`).then((response) => {
-                    const openWeatherData = {
-                        temperature: response.data.main.temp.toFixed(),
-                        feels_like: response.data.main.feels_like.toFixed(),
-                        pressure: (response.data.main.pressure / 1.33).toFixed(),
-                        humidity: response.data.main.humidity,
-                        condition: response.data.weather[0].description,
-                        icon: response.data.weather[0].icon,
-                        wind_speed: response.data.wind.speed.toFixed(1),
-                        wind_direction: response.data.wind.deg,
-                        date_forecast: response.data.dt_txt
-                    }
-                    setIsLoading(false);
-                    setForecastData(openWeatherData);
-                })
+                await axios.get(`${URL}?${coordinates}&appid=${API_KEY}&exclude=minutely,hourly,alerts&units=metric&lang=ru`)
+                    .then((response) => response.data)
+                    .then((data) => {
+                        const openWeatherData = {
+                            temperature: data.current.temp.toFixed(),
+                            feels_like: data.current.feels_like.toFixed(),
+                            pressure: (data.current.pressure / 1.33).toFixed(),
+                            humidity: data.current.humidity,
+                            condition: data.current.weather[0].description,
+                            icon: data.current.weather[0].icon,
+                            wind_speed: data.current.wind_speed.toFixed(1),
+                            wind_direction: data.current.wind_deg,
+                        }
+                        setIsLoading(false);
+                        setForecastData(openWeatherData);
+                    })
             } catch (error) {
                 alert("Ошибка загрузки данных с сервера");
             }
         };
-        getOpenWeatherData(currentCity);
-    }, [currentCity]);
+        getOpenWeatherData(cityCoordinates);
+    }, [cityCoordinates]);
 
     return (
         <AppContext.Provider value={{ 
             currentCity,
             setCurrentCity,
+            setCityCoordinates,
             forecastData,
             isLoading
         }}>

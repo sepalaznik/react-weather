@@ -9,6 +9,7 @@ Sergei Palaznik, 2021
 - ReactJS
 - React Router
 - css variables
+- fetch axios data with OpenWeather One Call API
 
 ## Available Scripts:
 
