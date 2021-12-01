@@ -7,7 +7,7 @@ import AppContext from "../../context";
 export function ThisDayDetails() {
     const { forecastData } = React.useContext(AppContext);
 
-    let windDirectionRu = "";
+    let windDirectionRu = "нет информации о направлении";
     if (forecastData.wind_direction >= 22.5 && forecastData.wind_direction < 67.5) {
         windDirectionRu = "северо-восточный";
     }

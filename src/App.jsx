@@ -17,7 +17,6 @@ function App() {
         async function getOpenWeatherData(city) {
             const URL = "https://api.openweathermap.org/data/2.5/weather";
             const URL5 = "https://api.openweathermap.org/data/2.5/forecast";
-            //const API_KEY = "49c52c385165361328d4aafbff37e087";
             const API_KEY = "317d8d98230306f1440ac5140bd1461a";
 
             try {
@@ -42,7 +41,7 @@ function App() {
             }
         };
         getOpenWeatherData(currentCity);
-    }, []);
+    }, [currentCity]);
 
     return (
         <AppContext.Provider value={{ 
