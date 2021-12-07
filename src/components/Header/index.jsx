@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import { Link } from "react-router-dom";
 
 import "./Header.css";
 import AppContext from "../../context";
@@ -78,20 +77,13 @@ export function Header({}) {
 
     return (
         <div className="header">
-            <Link to="/">
-                <div className="wrapper">
-                    <div className="logo">
-                        <img src="assets/images/logo_weather_2.svg" alt="App Logo" title ="На главную страницу" />
-                    </div>
-                    <div className="title">React Weather</div>
-                </div>
-            </Link>
             <div className="wrapper">
-                <Link to="/about">
-                    <div className="icon about-me">
-                        <img src="assets/images/icon_snowflake.svg" alt="About Me" title ="О приложении" />
-                    </div>
-                </Link>
+                <div className="logo">
+                    <img src="assets/images/logo_weather_2.svg" alt="App Logo" title ="App Logo" />
+                </div>
+                <div className="title">React Weather</div>
+            </div>
+            <div className="wrapper">
                 <div className="icon change-theme" onClick={changeTheme}>
                     <img src="assets/images/icon_raindrop.svg" alt="Change Theme" title ="Изменить тему" />
                 </div>

@@ -1,4 +1,4 @@
-.next__days {
+.forecast__duration {
     padding: 16px;
     border-radius: 0 0 12px 12px;
     background-color: var(--components-background-default);
@@ -46,34 +46,33 @@
     display: flex;
     gap: 8px;
 }
-.tab, .close {
-    padding: 8px 12px;
-    border-radius: var(--mini-border-radius);
+.tab, .about {
+    border-radius: 8px 8px 0 0;
     background-color: var(--components-background-default);
     box-shadow: var(--components-shadow-default);
-    cursor: pointer;
+}
+.tab {
+    padding: 8px 12px;
+}
+.about {
+    padding: 2px 16px;
 }
 .tab.active {
     background-color: var(--primary-color);
     color: #ffffff;
 }
-.close img {
-    display: none;
+.about-me svg {
+    width: 12px;
+    height: 12px;
 }
 
 @media (max-width:880px) {
-    .next__days {
+    .forecast__duration {
         overflow-x: scroll;
     }
 }
 @media (max-width:540px) {
     .day__title, .day__temperature span, .tab {
         font-size: 13px;
-    }
-    .close img {
-        display: block;
-    }
-    .close span {
-        display: none;
     }
 }

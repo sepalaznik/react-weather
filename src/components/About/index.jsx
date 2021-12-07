@@ -4,7 +4,7 @@ import './About.css';
 
 export const About = () => {
     return (
-        <div className="about-us">
+        <div className="about__app">
             <h3>React Weather App</h3>
             <article>Тестовое задание<br/> 
             Автор: Сергей Палазник, 2021<br/>

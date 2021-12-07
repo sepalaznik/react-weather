@@ -13,3 +13,25 @@ body {
     margin: 24px auto;
     padding: 16px;
 }
+a {
+    text-decoration: none;
+    color: var(--text-color-default);
+    cursor: pointer;
+}
+.main-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+.this-day-forecast {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+@media (max-width:768px) {
+    .this-day-forecast { 
+        flex-wrap: wrap;
+    }
+}

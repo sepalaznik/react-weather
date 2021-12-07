@@ -1,32 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import './NextDays.css';
 
 export function Tabs() {
-    const tabsControl = [
-        {
-            value: "На 3 дня",
-        },
-        {
-            value: "На неделю",
-        },
-        {
-            value: "На 2 недели",
-        },
-    ]
-
     return (
         <div className="tabs__block">
             <div className="select__tabs">
-                {tabsControl.map(item => (
-                    <div className="tab active" key={item.value}>
-                        {item.value}
-                    </div>
-                ))}
+                <Link to="/daily">
+                    <div className="tab">Почасовой</div>
+                </Link>
+                <Link to="/daily">
+                    <div className="tab active">На неделю</div>
+                </Link>                
             </div>
-            <div className="close">
-                <span>Отменить</span>
-                <img src="assets/images/icon_close.svg" alt="Close" />
+
+            <div className="about">
+                <Link to="/about">
+                    <div className="icon about-me">
+                        <img src="assets/images/icon_snowflake.svg" alt="About Me" title ="О приложении" />
+                    </div>
+                </Link>
             </div>
         </div>
     )

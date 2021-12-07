@@ -5,9 +5,6 @@
     flex-wrap: wrap;
     width: 100%;
 }
-a {
-    text-decoration: none;
-}
 .wrapper {
     display: flex;
     align-items: center;
@@ -17,10 +14,6 @@ a {
 .logo svg {
     width: 52px;
     height: 52px;
-}
-.about-me svg {
-    width: 12px;
-    height: 12px;
 }
 .change-theme {
     cursor: pointer;

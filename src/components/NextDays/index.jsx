@@ -3,52 +3,107 @@ import React from "react";
 import './NextDays.css';
 import { Tabs } from './Tabs';
 import { Card } from './Card';
-import { GetNextDate, GetNextWeekDay } from "./DatesList/datesList";
+
+import AppContext from "../../context";
 
 export function NextDays() {
+    const { isloading, forecastData } = React.useContext(AppContext);
+
+    const days1 = forecastData.daily_forecast;
+
+    function delay () {
+        console.log(days1)
+    };
+    delay()
+
+    
     const days = [
         {
-            week_day: 'Сегодня',
-            day_date: <GetNextDate dt_txt='2021-11-29' />,
-            icon_id: '13d',
-            temp_day: '+25',
-            temp_night: '+20',
-            info: 'Ясно',
+            "dt": 1638633600,
+            "temp": {
+                "day": 3.05,
+                "night": 4.49,
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "пасмурно",
+                    "icon": "04d"
+                }
+            ]
         },
         {
-            week_day: <GetNextWeekDay dt_txt='2021-11-30' />,
-            day_date: <GetNextDate dt_txt='2021-11-30' />,
-            icon_id: '11d',
-            temp_day: '+24',
-            temp_night: '+18',
-            info: 'Облачно с прояснениями',
+            "dt": 1638720000,
+            "temp": {
+                "day": 6.32,
+                "night": 11.64
+            },
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "дождь",
+                    "icon": "10d"
+                }
+            ]
         },
         {
-            week_day: <GetNextWeekDay dt_txt='2021-12-01' />,
-            day_date: <GetNextDate dt_txt='2021-12-01' />,
-            icon_id: '10n',
-            temp_day: '+17',
-            temp_night: '+12',
-            info: 'Небольшой дождь и солнце',
+            "dt": 1638806400,
+            "temp": {
+                "day": 14.47,
+                "night": 4.02
+            },
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "дождь",
+                    "icon": "10d"
+                }
+            ]
         },
         {
-            week_day: <GetNextWeekDay dt_txt='2021-12-02' />,
-            day_date: <GetNextDate dt_txt='2021-12-02' />,
-            icon_id: '02n',
-            temp_day: '+10',
-            temp_night: '+7',
-            info: 'Облачно',
+            "dt": 1638892800,
+            "temp": {
+                "day": 2.86,
+                "night": 4.28
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "пасмурно",
+                    "icon": "04d"
+                }
+            ]
         },
-    ];
+        {
+            "dt": 1638979200,
+            "temp": {
+                "day": 12.34,
+                "night": 11.47
+            },
+            "weather": [
+                {
+                    "id": 502,
+                    "main": "Rain",
+                    "description": "сильный дождь",
+                    "icon": "10d"
+                }
+            ]
+        }
+    ]
 
-    return (
-        <div className="forecast__duration">
-            <Tabs />
-            <div className="next__days">    
-                {days.map((item, index) => (
-                        <Card {...item} key={index} />
+    return ( 
+        <div>
+            {isloading ? 'Данные загрузаются...' : (
+            <div className="forecast__duration">    
+                {days.map((item) => (
+                    <Card {...item} key={item.dt} />
                 ))}
             </div>
+            )}
         </div>
     )
 };

@@ -5,7 +5,7 @@ import { IndicatorSvgSelector } from '../ImgSelectors/IndicatorSvgSelector';
 import AppContext from "../../context";
 
 export function ThisDayDetails() {
-    const { forecastData } = React.useContext(AppContext);
+    const { forecastData, isloading } = React.useContext(AppContext);
 
     let windDirectionRu = "нет информации о направлении";
     if (forecastData.wind_direction >= 22.5 && forecastData.wind_direction < 67.5) {
@@ -63,7 +63,9 @@ export function ThisDayDetails() {
 
     return (
         <div className="this__day_details">
-            <div className="this__day_items">
+            { isloading 
+                ? '' 
+                : <div className="this__day_items">
                 {items.map((item) => (
                     <div className="day__details_item" key={item.id}>
                         <div className="day__details_indicator">
@@ -74,6 +76,7 @@ export function ThisDayDetails() {
                     </div>
                 ))}
             </div>
+            }
         </div>
     )
 };

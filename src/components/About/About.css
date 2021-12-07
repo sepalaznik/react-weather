@@ -1,0 +1,23 @@
+.about__app {
+    text-align: center;
+    padding: 16px;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--components-background-default);
+    box-shadow: var(--components-shadow-default);
+    width: 100%;
+    box-sizing: border-box;
+}
+.about__app h3 {
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.about__app article {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--base-color);
+}

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-
 import axios from 'axios';
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-//import { Popup } from './components/Popup';
-import { Header } from './components/Header';
+
 import AppContext from "./context";
+import { Header } from './components/Header';
+import { ThisDay } from './components/ThisDay';
+import { ThisDayDetails } from './components/ThisDayDetails';
+import { NextDays } from './components/NextDays';
+import { Tabs } from './components/NextDays/Tabs';
+import { About } from './components/About';
 
 function App() {
     const [forecastData, setForecastData] = React.useState({});
@@ -24,6 +26,7 @@ function App() {
                     .then((response) => response.data)
                     .then((data) => {
                         const openWeatherData = {
+                            timezone: data.timezone,
                             temperature: data.current.temp.toFixed(),
                             feels_like: data.current.feels_like.toFixed(),
                             pressure: (data.current.pressure / 1.33).toFixed(),
@@ -32,6 +35,7 @@ function App() {
                             icon: data.current.weather[0].icon,
                             wind_speed: data.current.wind_speed.toFixed(1),
                             wind_direction: data.current.wind_deg,
+                            daily_forecast: data.daily,
                         }
                         setIsLoading(false);
                         setForecastData(openWeatherData);
@@ -53,18 +57,26 @@ function App() {
         }}>
             <div className="container">
                 <Header />
-                <Switch>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                    <Route path="/about" exact>
-                        <About />
-                    </Route>
-                </Switch>
+                <div className="main-page">
+                    <div className="this-day-forecast">
+                        <ThisDay />
+                        <ThisDayDetails />
+                    </div>
+                    <div className="next-days-forecast">
+                        <Tabs />
+                        <Switch>
+                            <Route path="/daily" exact>
+                                <NextDays />
+                            </Route>
+                            <Route path="/about" exact>
+                                <About />
+                            </Route>
+                        </Switch>
+                    </div>     
+                </div>
             </div>
         </AppContext.Provider>
     );
 }
-// <Popup />
 
 export default App;
