@@ -8,7 +8,7 @@ import AppContext from "../../context";
 
 export function ThisDay() {
     const { currentCity, forecastData, isloading } = React.useContext(AppContext);
-    
+
     return (
         <div>
             { isloading 
@@ -22,8 +22,9 @@ export function ThisDay() {
                     </div>
                     <div className="bottom__block">
                         <div className="this__day_title">Сегодня: <span><GetCurrentDate/></span></div>
-                        <div className="current__time">Текущее время: <span><Clock timezone={forecastData.timezone} /></span></div>
-                        <div className="current__city">Город: <span>{currentCity}</span></div>
+                        <div className="current__city">В <span>{currentCity}</span>е</div>
+                        <div className="current__time">сейчас <span><Clock timezone={forecastData.timezone} /></span></div>
+
                     </div>
                 </div>
             }

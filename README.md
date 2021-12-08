@@ -11,6 +11,12 @@ Sergei Palaznik, 2021
 - css variables
 - fetch axios data with OpenWeather One Call API
 
+## Problems:
+- время по часовому поясу ушло на 1 час вперед?
+- как отрендерить карточки hourly и daily только после загрузки данных?
+- выбрать из запроса hourly и daily только нужные параметры и обрезать их до 7 или 8 записей?
+- повесить на табы смену класса "active".
+
 ## Available Scripts:
 
 ### npm run dev

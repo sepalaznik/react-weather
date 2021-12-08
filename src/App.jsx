@@ -6,7 +6,8 @@ import AppContext from "./context";
 import { Header } from './components/Header';
 import { ThisDay } from './components/ThisDay';
 import { ThisDayDetails } from './components/ThisDayDetails';
-import { NextDays } from './components/NextDays';
+import { Daily } from './components/NextDays/Daily';
+import { Hourly } from './components/NextDays/Hourly';
 import { Tabs } from './components/NextDays/Tabs';
 import { About } from './components/About';
 
@@ -22,7 +23,7 @@ function App() {
             const API_KEY = "317d8d98230306f1440ac5140bd1461a";
 
             try {
-                await axios.get(`${URL}?${coordinates}&appid=${API_KEY}&exclude=minutely,hourly,alerts&units=metric&lang=ru`)
+                await axios.get(`${URL}?${coordinates}&appid=${API_KEY}&exclude=minutely,alerts&units=metric&lang=ru`)
                     .then((response) => response.data)
                     .then((data) => {
                         const openWeatherData = {
@@ -35,10 +36,11 @@ function App() {
                             icon: data.current.weather[0].icon,
                             wind_speed: data.current.wind_speed.toFixed(1),
                             wind_direction: data.current.wind_deg,
+                            hourly_forecast: data.hourly,
                             daily_forecast: data.daily,
                         }
-                        setIsLoading(false);
                         setForecastData(openWeatherData);
+                        setIsLoading(false);
                     })
             } catch (error) {
                 alert("Ошибка загрузки данных с сервера");
@@ -65,8 +67,11 @@ function App() {
                     <div className="next-days-forecast">
                         <Tabs />
                         <Switch>
+                            <Route path="/hourly" exact>
+                                <Hourly />
+                            </Route>
                             <Route path="/daily" exact>
-                                <NextDays />
+                                <Daily />
                             </Route>
                             <Route path="/about" exact>
                                 <About />

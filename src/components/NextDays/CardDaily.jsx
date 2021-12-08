@@ -4,7 +4,7 @@ import './NextDays.css';
 import { WeatherSvgSelector } from '../ImgSelectors/WeatherSvgSelector';
 import { GetNextDate, GetNextWeekDay } from "./DatesList/datesList";
 
-export function Card(item) {
+export function CardDaily(item) {
     return (
         <div className="weather__card">
             <div className="day__title"><GetNextWeekDay dt={item.dt} /></div>

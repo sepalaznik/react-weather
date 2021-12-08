@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 export function Clock(props) {
     let options = {timeZone: props.timezone};
 
+    
     const [currentTime, setCurrentTime] = useState({
-        time: new Date().toLocaleTimeString('ru-Ru', options),
+        time: new Date().toLocaleTimeString('ru', options),
     });
 
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentTime({
-                time: new Date().toLocaleTimeString('ru-Ru', options),
+                time: new Date().toLocaleTimeString('ru', options),
             });
         }, 1000);
 

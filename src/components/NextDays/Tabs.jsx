@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 import './NextDays.css';
 
 export function Tabs() {
+    // const tabActive = () => {
+    //     const tab = document.querySelectorAll(".tab");
+    //     tab.classList.add("active");
+    // }    
+
     return (
         <div className="tabs__block">
             <div className="select__tabs">
-                <Link to="/daily">
-                    <div className="tab">Почасовой</div>
+                <Link to="/hourly">
+                    <div className="tab active">Почасовой</div>
                 </Link>
                 <Link to="/daily">
-                    <div className="tab active">На неделю</div>
+                    <div className="tab">На неделю</div>
                 </Link>                
             </div>
 

@@ -66,16 +66,16 @@ export function ThisDayDetails() {
             { isloading 
                 ? '' 
                 : <div className="this__day_items">
-                {items.map((item) => (
-                    <div className="day__details_item" key={item.id}>
-                        <div className="day__details_indicator">
-                            <IndicatorSvgSelector id={item.id} />
+                    {items.map((item) => (
+                        <div className="day__details_item" key={item.id}>
+                            <div className="day__details_indicator">
+                                <IndicatorSvgSelector id={item.id} />
+                            </div>
+                            <div className="indicator__name">{item.name}:</div>
+                            <div className="indicator__value">{item.value}</div>
                         </div>
-                        <div className="indicator__name">{item.name}:</div>
-                        <div className="indicator__value">{item.value}</div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
             }
         </div>
     )

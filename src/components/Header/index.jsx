@@ -46,8 +46,9 @@ export function Header({}) {
         { value: "lat=48.1482&lon=17.1067", label: "Братислава" },
         { value: "lat=31.769&lon=35.2163", label: "Иерусалим" },
         { value: "lat=40.7143&lon=-74.006", label: "Нью-Йорк" },
+        { value: "lat=39.9075&lon=116.3972", label: "Пекин" },
     ];
-    
+
     const selectStyles = {
         control: (styles) => ({
             ...styles,
