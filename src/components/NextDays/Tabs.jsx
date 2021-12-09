@@ -18,14 +18,14 @@ export function Tabs() {
         <div className="tabs__block">
             <div className="select__tabs">
                 <Link to="/hourly">
-                    <div className="tab selector active" onClick={handleSelectActiveTab}>Почасовой</div>
+                    <div className="tab selector" onClick={handleSelectActiveTab}>Почасовой</div>
                 </Link>
                 <Link to="/daily">
                     <div className="tab selector" onClick={handleSelectActiveTab}>На неделю</div>
                 </Link>                
             </div>
             <Link to="/">
-                <div className="selector about-me" onClick={handleSelectActiveTab} title ="О приложении">
+                <div className="selector about-me active" onClick={handleSelectActiveTab} title ="О приложении">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25.2" height="28"
                         viewBox="0 0 25.2 28">
                         <path d="M24,18.6L23,18l0.7-0.4c1.9-1.1,0.2-4-1.7-3L20,15.7c-0.2,0.1-0.3,0.2-0.5,0.3l-0.7-0.4v-3.3l0.7-0.4
