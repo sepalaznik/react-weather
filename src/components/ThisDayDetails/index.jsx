@@ -8,6 +8,9 @@ export function ThisDayDetails() {
     const { forecastData, isloading } = React.useContext(AppContext);
 
     let windDirectionRu = "нет информации о направлении";
+    if (forecastData.wind_direction >=0 && forecastData.wind_direction < 22.5) {
+        windDirectionRu = "северный";
+    }
     if (forecastData.wind_direction >= 22.5 && forecastData.wind_direction < 67.5) {
         windDirectionRu = "северо-восточный";
     }
@@ -28,10 +31,10 @@ export function ThisDayDetails() {
     }
     if (forecastData.wind_direction >= 292.5 && forecastData.wind_direction < 337.5) {
         windDirectionRu = "северо-западный";
-        }
-    if (forecastData.wind_direction < 22.5 && forecastData.wind_direction >= 337.5) {
-        windDirectionRu = "северный";
     }
+    if (forecastData.wind_direction >= 337.5 && forecastData.wind_direction <= 360) {
+        windDirectionRu = "северный";
+    };
 
     const items = [
         {

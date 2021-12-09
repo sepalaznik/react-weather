@@ -6,9 +6,9 @@ import AppContext from "./context";
 import { Header } from './components/Header';
 import { ThisDay } from './components/ThisDay';
 import { ThisDayDetails } from './components/ThisDayDetails';
-import { Daily } from './components/NextDays/Daily';
-import { Hourly } from './components/NextDays/Hourly';
 import { Tabs } from './components/NextDays/Tabs';
+import { Hourly } from './components/NextDays/Hourly';
+import { Daily } from './components/NextDays/Daily';
 import { About } from './components/About';
 
 function App() {
@@ -36,8 +36,8 @@ function App() {
                             icon: data.current.weather[0].icon,
                             wind_speed: data.current.wind_speed.toFixed(1),
                             wind_direction: data.current.wind_deg,
-                            hourly_forecast: data.hourly,
-                            daily_forecast: data.daily,
+                            hourly_forecast: data.hourly.slice(0, 12),
+                            daily_forecast: data.daily.slice(1, 8),
                         }
                         setForecastData(openWeatherData);
                         setIsLoading(false);
@@ -73,7 +73,7 @@ function App() {
                             <Route path="/daily" exact>
                                 <Daily />
                             </Route>
-                            <Route path="/about" exact>
+                            <Route path="/" exact>
                                 <About />
                             </Route>
                         </Switch>

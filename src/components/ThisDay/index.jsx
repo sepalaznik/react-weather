@@ -2,8 +2,8 @@ import React from "react";
 
 import './ThisDay.css';
 import { WeatherSvgSelector } from '../ImgSelectors/WeatherSvgSelector';
-import { Clock } from "./Clock/clock.js";
 import { GetCurrentDate } from "./CurrentDayName/currentDayName.js";
+import { Clock } from "./Clock/clock.js";
 import AppContext from "../../context";
 
 export function ThisDay() {
@@ -21,9 +21,9 @@ export function ThisDay() {
                         </div>
                     </div>
                     <div className="bottom__block">
-                        <div className="this__day_title">Сегодня: <span><GetCurrentDate/></span></div>
-                        <div className="current__city">В <span>{currentCity}</span>е</div>
-                        <div className="current__time">сейчас <span><Clock timezone={forecastData.timezone} /></span></div>
+                        <div className="this__day_title">Сегодня: <span><GetCurrentDate timezone={forecastData.timezone}/></span></div>
+                        <div className="current__city"><span>{currentCity}</span></div>
+                        <div className="current__time">Сейчас <span><Clock timezone={forecastData.timezone} /></span></div>
 
                     </div>
                 </div>
