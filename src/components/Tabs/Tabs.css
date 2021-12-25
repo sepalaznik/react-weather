@@ -1,0 +1,42 @@
+.tabs__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+.tabs__block, .select__tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.selector.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+.selector.active svg path {
+    fill: #ffffff;
+}
+
+.tab, .close-button {
+    border-radius: 8px 8px 0 0;
+    background-color: var(--components-background-default);
+    box-shadow: var(--components-shadow-default);
+}
+.tab, .close-button {
+    padding: 8px 12px;
+}
+.close-button svg {
+    display: none;
+}
+
+@media (max-width:540px) {
+    .tab {
+        font-size: 13px;
+    }
+    .close-button svg {
+        display: block;
+    }
+    .close-button span {
+        display: none;
+    }
+}

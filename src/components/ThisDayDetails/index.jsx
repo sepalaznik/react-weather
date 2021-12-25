@@ -1,11 +1,14 @@
 import React from "react";
 
-import './ThisDayDetails.css';
-import { IndicatorSvgSelector } from '../ImgSelectors/IndicatorSvgSelector';
+import "./ThisDayDetails.css";
+import { IndicatorSvgSelector } from "../ImgSelectors/IndicatorSvgSelector";
+import { WeatherSvgSelector } from "../ImgSelectors/WeatherSvgSelector";
+import { GetCurrentDate } from "./CurrentDayName/currentDayName.js";
+import { Clock } from "./Clock/clock.js";
 import AppContext from "../../context";
 
 export function ThisDayDetails() {
-    const { forecastData, isloading } = React.useContext(AppContext);
+    const { forecastData, currentCountry, currentCityName, isloading } = React.useContext(AppContext);
 
     let windDirectionRu = "нет информации о направлении";
     if (forecastData.wind_direction >=0 && forecastData.wind_direction < 22.5) {
@@ -38,28 +41,28 @@ export function ThisDayDetails() {
 
     const items = [
         {
-            id: 'temperature',
-            name: 'Температура',
+            id: "temperature",
+            name: "Температура",
             value: `${forecastData.temperature}°, ощущается как ${forecastData.feels_like}°`,
         },
         {
-            id: 'pressure',
-            name: 'Давление',
+            id: "pressure",
+            name: "Давление",
             value: `${forecastData.pressure} мм ртутного столба`,
         },
         {
-            id: 'cloudy',
-            name: 'Погода',
+            id: "cloudy",
+            name: "Погода",
             value: `${forecastData.condition}`
         },
         {
-            id: 'precipitation',
-            name: 'Влажность',
+            id: "precipitation",
+            name: "Влажность",
             value: `${forecastData.humidity} %`,
         },
         {
-            id: 'wind',
-            name: 'Ветер',
+            id: "wind",
+            name: "Ветер",
             value: `${windDirectionRu}, ${forecastData.wind_speed} м/с`,
         },
     ];
@@ -67,8 +70,23 @@ export function ThisDayDetails() {
     return (
         <div className="this__day_details">
             { isloading 
-                ? '' 
+                ? ""
                 : <div className="this__day_items">
+                    <div className="current__city">
+                        <img src={`assets/flags/${currentCountry}.svg`} width={18} height={18} alt="" title ="" />
+                        <span>{currentCityName}</span>
+                    </div>
+                    <div className="top__block">
+                        <div className="current__temperature">{forecastData.temperature}&#176;</div>
+                        <div className="weather__logo">
+                            <WeatherSvgSelector id={forecastData.icon} />
+                        </div>
+                    </div>
+                    <div className="bottom__block">
+                        <div className="this__day_title">Сегодня: <span><GetCurrentDate timezone={forecastData.timezone} /></span></div>
+                        <div className="current__time">Сейчас: <span><Clock timezone={forecastData.timezone} /></span></div>
+                    </div>
+                    <hr />
                     {items.map((item) => (
                         <div className="day__details_item" key={item.id}>
                             <div className="day__details_indicator">

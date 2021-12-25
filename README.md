@@ -8,11 +8,8 @@ Sergei Palaznik, 2021
 - webpack settings
 - ReactJS
 - React Router
-- css variables
-- fetch axios data with OpenWeather One Call API
-
-## Problems:
-- некорректно рендерятся почасовой и недельный прогнозы - пытаются это сделать до загрузки данных, что вызывает ошибку :(
+- css variables for change themes
+- axios data with OpenWeather API
 
 ## Available Scripts:
 

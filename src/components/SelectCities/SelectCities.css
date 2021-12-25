@@ -1,0 +1,67 @@
+.select__cities {
+    padding: 16px;
+    width: calc(33% - 40px);
+    min-width: 328px;
+    border-radius: var(--standart-border-radius);
+    background: var(--components-background-default);
+    box-shadow: var(--components-shadow-default);
+}
+.select__cities p {
+    text-align: left;
+    font-size: 16px;
+    color: var(--text-color-default);
+}
+.search-field {
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--text-color-default);
+}
+.search-field form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-field input {
+    width: calc(100% - 30px);
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px;
+    outline: none;
+    border: none;
+    background: var(--components-background-default);
+}
+.search-field button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.favorites-cities {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.favorites-cities button {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--base-color);
+}
+.favorites-cities button img {
+    margin-right: 12px;
+    box-shadow: var(--components-shadow-default);
+}
+.favorites-cities button:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width:540px) {
+    .bottom__block {
+        font-size: 16px;
+    }
+}

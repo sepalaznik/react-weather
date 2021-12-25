@@ -1,0 +1,101 @@
+.forecast__duration {
+    padding: 16px;
+    border-radius: 0 0 12px 12px;
+    background-color: var(--components-background-default);
+    box-shadow: var(--components-shadow-default);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    box-sizing: border-box;
+}
+.weather__card {
+    color: var(--base-color);
+    background: var(--card-background-default);
+    width: calc(100% - 16px);
+    padding: 12px 8px;
+    border-radius: var(--mini-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.day__title, .day__temperature span, .hour__temperature span {
+    color: var(--text-color-default);
+}
+.daily__forecast, .hourly__forecast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.daily__forecast {
+    width: 70%;
+}
+.day__name {
+    width: 30%;
+}
+.day__weather {
+    width: 80%;
+    display: flex;
+}
+.day__temperature, .night__temperature {
+    width: 25%
+}
+.cloudy__description {
+    width: 50%;
+}
+
+.hourly__forecast {
+    width: 78%;
+}
+.hour__name {
+    width: 22%;
+}
+.hour__weather {
+    width: 86%;
+    display: flex;
+}
+.hour__temperature {
+    width: 33%
+}
+.hour__wind {
+    width: 24%
+}
+.hour__description {
+    width: 43%;
+}
+
+@media (max-width:798px) {
+    .day__title, .day__date {
+        display: block;
+    }
+    .day__name {
+        width: 20%;
+    }
+    .daily__forecast {
+        width: 80%;
+    }
+}
+
+@media (max-width:540px) {
+    .weather__card {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .day__name, .daily__weather,
+    .hour__name, .hour__weather {
+        width: 100%;
+        text-align: center;
+    }
+    .daily__forecast, .hourly__forecast {
+        font-size: 12px;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .day__title, .day__date {
+        font-size: 13px;
+        display: inline;
+    }
+}
