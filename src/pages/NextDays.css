@@ -11,6 +11,18 @@
     gap: 12px;
     box-sizing: border-box;
 }
+.current__city_title {
+    font-size: 24px;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.current__city_title img {
+    margin-right: 12px;
+    box-shadow: var(--components-shadow-default);
+}
 .weather__card {
     color: var(--base-color);
     background: var(--card-background-default);

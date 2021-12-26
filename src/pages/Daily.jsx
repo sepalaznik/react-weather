@@ -5,7 +5,7 @@ import { CardDaily } from '../components/NextDays/CardDaily';
 import AppContext from "../context";
 
 export function Daily() {
-    const { longForecastData, isLoadingLong } = React.useContext(AppContext);
+    const { longForecastData, isLoadingLong, currentCityName, currentCountry } = React.useContext(AppContext);
 
     let dailyForecastData = longForecastData.daily_forecast;
 
@@ -13,7 +13,11 @@ export function Daily() {
         <div>
             { isLoadingLong
                 ? '' 
-                : <div className="forecast__duration">    
+                : <div className="forecast__duration">
+                    <div className="current__city_title">
+                        <img src={`assets/flags/${currentCountry}.svg`} width={18} height={18} alt="" title ="" />
+                        <span>{currentCityName}</span>
+                    </div>
                     {dailyForecastData.map((item) => (
                         <CardDaily {...item} key={item.dt} />
                     ))}
