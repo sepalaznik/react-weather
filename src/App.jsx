@@ -49,6 +49,7 @@ function App() {
                         setCurrentCountry(cityData.country);
                         setCurrentCityName(cityData.name);
                         setCityCoordinates(`lon=${cityData.lon}&lat=${cityData.lat}`);
+                        sessionStorage.setItem("coordinates", `lon=${cityData.lon}&lat=${cityData.lat}`);
                         setIsLoading(false);
                     })
             } catch (error) {
@@ -65,7 +66,7 @@ function App() {
                         .then((data) => {
                             const longOpenWeatherData = {
                                 timezone: data.timezone,
-                                hourly_forecast: data.hourly.slice(0, 12),
+                                hourly_forecast: data.hourly.slice(1, 9),
                                 daily_forecast: data.daily.slice(1, 8),
                             };
                             setLongForecastData(longOpenWeatherData);

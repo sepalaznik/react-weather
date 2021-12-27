@@ -15,8 +15,8 @@ export function CardHourly(item) {
     return (
         <div className="weather__card">
             <div className="hour__name">
-                <span className="day__title"><GetNextTime dt={item.dt} timezone={longForecastData.timezone} />, </span>
-                <span className="day__date"><GetNextDate dt={item.dt} timezone={longForecastData.timezone} /></span>
+                <span className="day__date"><GetNextDate dt={item.dt} timezone={longForecastData.timezone} />, </span>
+                <span className="day__title"><GetNextTime dt={item.dt} timezone={longForecastData.timezone} /></span>
             </div>
             <div className="hourly__forecast">
                 <div className="hour__weather_logo">
