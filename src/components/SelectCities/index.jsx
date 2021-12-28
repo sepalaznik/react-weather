@@ -4,7 +4,7 @@ import './SelectCities.css';
 import AppContext from "../../context";
 
 export function SelectCities() {
-    const { setCurrentCity, setCurrentCountry, setCurrentCityName } = React.useContext(AppContext);
+    const { setCityCoordinates, setCurrentCity, setCurrentCountry, setCurrentCityName } = React.useContext(AppContext);
 
     const favoritesCities = [
         { value: "Minsk", country: "BY", label: "Минск" },
@@ -21,10 +21,7 @@ export function SelectCities() {
         setCurrentCountry(event.target.name);
         setCurrentCity(event.target.value);
         setCurrentCityName(event.target.textContent);
-        sessionStorage.setItem("country", event.target.name);
         sessionStorage.setItem("city", event.target.value);
-        sessionStorage.setItem("cityName", event.target.contentText);
-
     };
 
     const handleSubmit = (event) => {

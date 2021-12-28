@@ -47,7 +47,9 @@ function App() {
                             name: data.name
                         };
                         setCurrentCountry(cityData.country);
+                        sessionStorage.setItem("country", cityData.country);
                         setCurrentCityName(cityData.name);
+                        sessionStorage.setItem("cityName", cityData.name);
                         setCityCoordinates(`lon=${cityData.lon}&lat=${cityData.lat}`);
                         sessionStorage.setItem("coordinates", `lon=${cityData.lon}&lat=${cityData.lat}`);
                         setIsLoading(false);
@@ -88,6 +90,7 @@ function App() {
             setCurrentCity,
             setCurrentCityName,
             setCurrentCountry,
+            setCityCoordinates,
             forecastData,
             longForecastData,
             isLoading,
