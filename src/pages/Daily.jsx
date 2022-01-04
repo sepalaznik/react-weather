@@ -15,7 +15,7 @@ export function Daily() {
                 ? '' 
                 : <div className="forecast__duration">
                     <div className="current__city_title">
-                        <img src={`assets/flags/${currentCountry}.svg`} width={18} height={18} alt="" title ="" />
+                        <img src={`assets/flags/${currentCountry}.svg`} width={36} height={36} alt="" title ="" />
                         <span>{currentCityName}</span>
                     </div>
                     {dailyForecastData.map((item) => (
