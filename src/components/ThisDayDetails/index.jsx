@@ -73,8 +73,8 @@ export function ThisDayDetails() {
                 ? ""
                 : <div className="this__day_items">
                     <div className="current__city">
-                        <img src={`assets/flags/${currentCountry}.svg`} width={36} height={36} alt="" title ="" />
                         <span>{currentCityName}</span>
+                        <img src={`assets/flags/${currentCountry}.svg`} width={36} height={36} alt="" title ="" />
                     </div>
                     <div className="top__block">
                         <div className="current__temperature">{forecastData.temperature}&#176;</div>

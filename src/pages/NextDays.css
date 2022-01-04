@@ -20,8 +20,7 @@
     justify-content: center;
 }
 .current__city_title img {
-    margin-right: 12px;
-    box-shadow: var(--components-shadow-default);
+    margin-left: 12px;
 }
 .weather__card {
     color: var(--base-color);

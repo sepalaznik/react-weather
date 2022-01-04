@@ -11,10 +11,10 @@
     font-weight: 500;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 .current__city img {
-    margin-right: 12px;
-    box-shadow: var(--components-shadow-default);
+    margin-left: 12px;
 }
 .top__block {
     display: flex;

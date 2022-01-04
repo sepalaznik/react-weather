@@ -15,8 +15,8 @@ export function Hourly() {
                 ? '' 
                 : <div className="forecast__duration">
                     <div className="current__city_title">
-                        <img src={`assets/flags/${currentCountry}.svg`} width={36} height={36} alt="" title ="" />
                         <span>{currentCityName}</span>
+                        <img src={`assets/flags/${currentCountry}.svg`} width={36} height={36} alt="" title ="" />
                     </div>
                     {hourlyForecastData.map((item) => (
                         <CardHourly {...item} key={item.dt} />

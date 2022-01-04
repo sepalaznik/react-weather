@@ -1,8 +1,8 @@
 :root {
-    --body-background-dark: url(./assets/images/bg_night.jpg);
-    /* --body-background-dark: #0d1117; */
-    --body-background-light: url(./assets/images/bg_day.jpg); 
-    /* --body-background-light: #e6f0f8; */
+    /*--body-background-dark: url(./assets/images/bg_night.jpg); */
+    --body-background-dark: #0d1117;
+    /*--body-background-light: url(./assets/images/bg_day.jpg); */
+    --body-background-light: #e6f0f8;
     --body-background-default: var(--body-background-light);
 
     --components-background-dark: #4f4f4f;
