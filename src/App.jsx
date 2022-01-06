@@ -68,7 +68,7 @@ function App() {
                         .then((data) => {
                             const longOpenWeatherData = {
                                 timezone: data.timezone,
-                                hourly_forecast: data.hourly.slice(1, 9),
+                                hourly_forecast: data.hourly.slice(1, 8),
                                 daily_forecast: data.daily.slice(1, 8),
                             };
                             setLongForecastData(longOpenWeatherData);

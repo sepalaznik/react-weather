@@ -8,13 +8,13 @@ export function SelectCities() {
 
     const favoritesCities = [
         { value: "Minsk", country: "BY", label: "Минск" },
-        { value: "Moscow", country: "RU", label: "Москва" },
+        { value: "Kiev", country: "UA", label: "Киев" },
+        { value: "Warsaw", country: "PL", label: "Варшава" },
         { value: "Bratislava", country: "SK", label: "Братислава" },
         { value: "Jerusalem", country: "IL", label: "Иерусалим" },
         { value: "New York,NY", country: "US", label: "Нью-Йорк" },
         { value: "Rio de Janeiro", country: "BR", label: "Рио-де-Жанейро" },
-        { value: "Sydney", country: "AU", label: "Сидней" },
-        { value: "Tokio", country: "JP", label: "Токио" }
+        { value: "Sydney", country: "AU", label: "Сидней" }
     ];
 
     const handleSelectCity = (event) => {

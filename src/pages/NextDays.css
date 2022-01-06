@@ -40,14 +40,14 @@
     align-items: center;
     justify-content: space-between;
 }
-.daily__forecast {
-    width: 70%;
-}
 .day__name {
     width: 30%;
 }
+.daily__forecast {
+    width: 70%;
+}
 .day__weather {
-    width: 80%;
+    width: 82%;
     display: flex;
 }
 .day__temperature, .night__temperature {
@@ -57,24 +57,24 @@
     width: 50%;
 }
 
-.hourly__forecast {
-    width: 78%;
-}
 .hour__name {
     width: 22%;
+}
+.hourly__forecast {
+    width: 78%;
 }
 .hour__weather {
     width: 86%;
     display: flex;
 }
 .hour__temperature {
-    width: 33%
+    width: 32%
 }
 .hour__wind {
-    width: 24%
+    width: 26%
 }
 .hour__description {
-    width: 43%;
+    width: 42%;
 }
 
 @media (max-width:798px) {
